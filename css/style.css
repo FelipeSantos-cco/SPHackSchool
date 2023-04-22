@@ -1,0 +1,48 @@
+/* Estilização geral e ajustes*/
+
+/*
+    Verde padrão: #00E000 
+*/
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteiner {
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+
+/* Início da manipulação do Header */
+.header {
+    background-color: black;
+    display: flex;
+    width: 100%;
+    border-bottom: solid 2.5px #00E000;
+    color: #00E000;
+}
+
+.header .conteiner {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: #00E000;
+}
+
+.navBar a:hover {
+    color: white;
+}
+
+/* Fim da manipulação do Header */
