@@ -1,7 +1,8 @@
 /* Estilização geral e ajustes*/
 
 /*
-    Verde padrão: #00E000 
+    Verde padrão:   #00E000 
+    Azul Padrão:    #00005B
 */
 
 body {
@@ -46,3 +47,23 @@ body {
 }
 /* Fim da manipulação do Header */
 
+/* Início da manipulação do Banner */
+.banner{
+    width: 100%;
+    height: 100%;
+    background-color: #181818;
+    color: #00E000;
+    
+    /*COLOCAR GIF*/
+    /* background-image: url();
+    background-size: cover; */
+}
+
+.banner .conteiner{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* Fim da manipulação do Banner */
