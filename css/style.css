@@ -8,7 +8,6 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #05001b;
 }
 
 .conteiner {
@@ -54,6 +53,9 @@ body {
     width: 100%;
     height: 460px;
     color: #00E000;
+    background-image: url("../img/fundo-banner.jpg");
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .banner .conteiner {
@@ -75,28 +77,35 @@ body {
     justify-content: center;
 }
 
+.banner .conteiner .caixa2 {
+    background-color: rgba(0, 0, 0, 0.904);
+    padding: 20px;
+    border-radius: 25px;
+    margin: 10px;
+}
+
 /* Fim da manipulação do Banner */
 
 
 /* Início da manipulação dos Cards */
-.social {
+.caixaCards {
     width: 100%;
     background-color: #08002e;
 
 }
 
-.social .caixa {
+.caixaCards .caixa {
     display: flex;
     justify-content: center;
     color: white;
 }
 
 .conteiner .card img {
-    width: 30%;
+    width: 150px;
     height: 150px;
 }
 
-.social .conteiner {
+.caixaCards .conteiner {
     justify-content: space-between;
     padding: 10px 5px;
 }
@@ -108,6 +117,9 @@ body {
     text-align: center;
     border: solid 1px #00e000;
     margin: 1%;
+    border-radius: 25px;
+    background-color: #05001bf1;
+    padding: 5px;
 }
 
 .card h2, p {
