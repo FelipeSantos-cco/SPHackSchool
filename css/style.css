@@ -2,18 +2,19 @@
 
 /*
     Verde padrão:   #00E000 
-    Azul Padrão:    #00005B
+    Azul Padrão:    #05001b
 */
 
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #05001b;
 }
 
 .conteiner {
     display: flex;
     margin: auto;
-    width: 80%;
+    width: 90%;
 }
 
 /* Início da manipulação do Header */
@@ -45,25 +46,72 @@ body {
 .navBar a:hover {
     color: white;
 }
+
 /* Fim da manipulação do Header */
 
 /* Início da manipulação do Banner */
-.banner{
+.banner {
     width: 100%;
-    height: 100%;
-    background-color: #181818;
+    height: 460px;
     color: #00E000;
-    
-    /*COLOCAR GIF*/
-    /* background-image: url();
-    background-size: cover; */
 }
 
-.banner .conteiner{
+.banner .conteiner {
     justify-content: center;
     align-items: center;
     height: 100%;
     flex-direction: column;
 }
 
+.banner .conteiner h3 {
+    margin-bottom: 0px;
+    margin-top: 1%;
+    color: white;
+}
+
+.banner .conteiner .caixa {
+    display: flex;
+    margin: 0px;
+    justify-content: center;
+}
+
 /* Fim da manipulação do Banner */
+
+
+/* Início da manipulação dos Cards */
+.social {
+    width: 100%;
+    background-color: #08002e;
+
+}
+
+.social .caixa {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.conteiner .card img {
+    width: 30%;
+    height: 150px;
+}
+
+.social .conteiner {
+    justify-content: space-between;
+    padding: 10px 5px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: solid 1px #00e000;
+    margin: 1%;
+}
+
+.card h2, p {
+    color: white;
+}
+
+/* Fim da manipulação dos Cards */
