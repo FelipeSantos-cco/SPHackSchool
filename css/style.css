@@ -8,6 +8,8 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #08002e;
+    color: white;
 }
 
 .conteiner {
@@ -51,9 +53,9 @@ body {
 /* Início da manipulação do Banner */
 .banner {
     width: 100%;
-    height: 460px;
+    height: 480px;
     color: #00E000;
-    background-image: url("../img/fundo-banner.jpg");
+    background-image: url("../img/SPhack.png");
     background-attachment: fixed;
     background-position: center;
 }
@@ -90,14 +92,17 @@ body {
 /* Início da manipulação dos Cards */
 .caixaCards {
     width: 100%;
-    background-color: #08002e;
-
 }
 
 .caixaCards .caixa {
     display: flex;
     justify-content: center;
-    color: white;
+    margin-top: 30px;
+}
+
+.caixaCards .caixa h2 {
+    margin-bottom: 7px;
+    font-size: 180%;
 }
 
 .conteiner .card img {
@@ -122,8 +127,42 @@ body {
     padding: 5px;
 }
 
-.card h2, p {
+.card h2,
+p {
     color: white;
 }
 
 /* Fim da manipulação dos Cards */
+
+/* Início da manipulação do conteúdo*/
+
+.conteudo {
+    width: 100%;
+}
+
+.conteudo .conteiner {
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+    flex-direction: row;
+    border: solid 1px #00E000;
+    border-radius: 30px;
+}
+
+.conteudo .conteiner .caixa_h2 h2 {
+    margin-left: 10px;
+}
+
+.conteudo .conteiner .caixa_h2 {
+    border-right: 3px solid #007900;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.conteudo .conteiner .caixa_p {
+    margin-left: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Fim da manipulação do conteúdo*/
