@@ -111,8 +111,8 @@ body {
 }
 
 .caixaCards .conteiner {
-    justify-content: space-between;
     padding: 10px 5px;
+    flex-wrap: wrap;
 }
 
 .card {

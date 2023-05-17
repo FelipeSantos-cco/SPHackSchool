@@ -11,7 +11,7 @@
 // var vt_curso_link = ['https://www.google.com'];
 
 var curso = {
-    titulo: ['Curso de lógica', 'Curso de SQL e NoSQL', 'Curso de lógica', 'Curso de SQL e NoSQL', 'Curso de lógica', 'Curso de SQL e NoSQL'],
+    titulo: ['Curso de lógica', 'Curso de SQL e NoSQL', 'DNS', 'Curso de SQL e NoSQL', 'Curso de lógica', 'SOCORRO DEUS!'],
     enderecoImg: ['./assets/img/protecao.png', '-1', './assets/img/protecao.png', '-1', './assets/img/protecao.png', '-1'],
     texto: ['Aqui você vai aprender tudo relacionado a lógica', 'Aprenda SQL e NoSQL de forma prática e abrangente!', 'Aqui você vai aprender tudo relacionado a lógica', 'Aprenda SQL e NoSQL de forma prática e abrangente!', 'Aqui você vai aprender tudo relacionado a lógica', 'Aprenda SQL e NoSQL de forma prática e abrangente!'],
     link: ['https://www.google.com', 'https://www.w3schools.com', 'https://www.google.com', 'https://www.w3schools.com', 'https://www.google.com', 'https://www.w3schools.com']
@@ -44,8 +44,8 @@ for (var i = 0; i < curso.titulo.length; i++) {
     </div>
     `;
 
-    if (cont_br == 3) { 
-        div_addCursos.innerHTML += `<br>`;
-        cont_br = 0;
-    }
+    // if (cont_br == 3) { 
+    //     div_addCursos.innerHTML += `<br>`;
+    //     cont_br = 0;
+    // }
 }
