@@ -1,0 +1,19 @@
+Plataforma:
+- idPlataforma
+- nomePlataforma
+- descPlataforma
+- linkPlataforma
+- imgPlataforma
+
+curso:
+- idCurso
+- fkPlataforma
+- descCurso
+- imgCurso
+- linkCurso
+
+user:
+- idUser
+- nomeUser
+- emailLogin
+- senhaLogin

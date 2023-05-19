@@ -39,7 +39,7 @@ for (var i = 0; i < curso.titulo.length; i++) {
     <div class="card">
         <img src="${enderecoImg}">
         <h2>${curso.titulo[i]}</h2>
-        <p>${curso.texto[i]}</p>
+        <!-- <p>${curso.texto[i]}</p> -->
         <p><a href="${curso.link[i]}">Clique aqui para saber mais!!</a></p>
     </div>
     `;
