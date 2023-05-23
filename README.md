@@ -1,6 +1,18 @@
 # São Paulo Hack School - SPHackSchool 
 ## Projeto Individual da matéria de Pesquisa e Inovação
 
+### Parceiros
+
+<table>
+  <tr>
+    <td align="center"><a href="https://guiadeti.com.br"><img style="border-radius: 50%;" src="https://guiadeti.com.br/wp-content/uploads/2022/09/guiadeti-logo-facebookg.png" width="200px;" alt=""/><br /><sub><b>Guia de TI</b></sub></a><br /><a href="#" >🦉</a></td>
+  </tr>
+</table>
+
+
+---
+
+
 ### A SPHackSchool é uma plataforma de ensino sobre conceitos de hacking ético e programação.
 
 Por um bom tempo tive dificuldades com a pesquisa sobre esse tema (hacking) e desenvolvimentos de trabalhos acadêmicos sobre o mesmo, então a plataforma que proponho é um **site onde ele ensina programação, história do hacking e seus conceitos junto com programação, disponibilizando conteúdos para um aprendizado gradual e contínuo**. 
