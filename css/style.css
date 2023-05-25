@@ -111,7 +111,6 @@ body {
 }
 
 .caixaCards .conteiner {
-    padding: 10px 5px;
     flex-wrap: wrap;
 }
 
@@ -125,6 +124,7 @@ body {
     border-radius: 25px;
     background-color: #05001bf1;
     padding: 5px;
+    width: 20%;
 }
 
 .card h2,
