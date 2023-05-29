@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHack | Login </title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+
+</head>
+
+<body>
+
+    <!--Início do Header -->
+    <div class="header">
+        <div class="conteiner">
+            <h1>SPHack</h1>
+            <ul class="navBar">
+                <li><a href="./index.html">HOME</a></li>
+                <li>|</li>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="">CADASTRE-SE</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--Fim do Header -->
+
+    <!--Início do banner -->
+    <div class="banner">
+        <div class="conteiner"></div>
+    </div>
+    <!--Fim do banner -->
+
+    <!--Início do formulário de Login-->
+    <div class="form">
+        <div class="conteiner">
+            <div class="box">
+                <h1>LOGIN</h1>
+                <p>E-mail</p>
+                <input type="text" id="ipt_email_login" placeholder="nome_email@gmail.com">
+                <p>Senha</p>
+                <input type="password" id="ipt_senha_login" placeholder="******" >
+                <button onclick="logar()">Entrar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Fim do formulário de Login-->
+ 
+</body>
+
+</html>
+
+<script>
+    var erro = false;
+    
+    function logar(){
+        var email = ipt_email_login.value;
+        var senha = ipt_senha_login.value;
+
+        // console.log(email.includes('@'));
+
+        var check_email = email == "" || (email.includes('@')) == false;
+        var check_senha = senha.length <= 5;
+
+        if(check_email){
+            alert(`Por favor, coloque um e-mail válido`);
+            ipt_email_login.style = 'border: 3px solid red;'
+            ipt_email_login.focus();
+
+            erro = true;
+        }
+
+        if(check_senha){
+            alert(`Por favor, coloque uma senha mais segura. Com no mínimo 6 caracteres`);
+            ipt_senha_login.style = 'border: 3px solid red;'
+            ipt_senha_login.focus();
+
+            erro = true;
+        }
+
+        if(!erro){
+
+
+        }
+
+
+        erro = false;
+    }
+
+
+</script>
