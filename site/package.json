@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FelipeSantos-cco/SPHackSchool#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql2": "^3.3.3"
   }
 }
