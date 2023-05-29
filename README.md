@@ -19,3 +19,7 @@ Por um bom tempo tive dificuldades com a pesquisa sobre esse tema (hacking) e de
 	
 Particularmente eu gosto de ensinar as coisas que sei, então nada mais justo que criar uma plataforma que ensine algo que eu gosto, juntando as duas coisas que eu gosto. 
 
+---
+
+### Banco de Dados
+<img src="https://github.com/FelipeSantos-cco/SPHackSchool/assets/125617308/635f28a1-d4c7-43aa-8771-ecc2f4683e3e" width="500px;"/>
