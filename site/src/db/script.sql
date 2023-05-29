@@ -71,3 +71,6 @@ DELIMITER ;
 --     , ('https://guiadeti.com.br/guia/khan-academy/');
 -- SELECT bdSPHack.fn_nomePlat('https://guiadeti.com.br/guia/curso-em-video/') AS idPlataforma;
 
+
+CREATE USER aluno IDENTIFIED BY 'sptech';
+GRANT ALL ON bdSPHack.* TO aluno;
