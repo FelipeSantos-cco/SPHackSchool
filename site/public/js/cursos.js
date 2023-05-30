@@ -1,3 +1,4 @@
+/*
 fetch('/cursos')
   .then(response => response.json())
   .then(cursos => {
@@ -28,3 +29,6 @@ fetch('/cursos')
     });
   })
   .catch(error => console.error(error));
+*/
+
+console.log("cursos.js");
