@@ -74,3 +74,9 @@ DELIMITER ;
 
 CREATE USER aluno IDENTIFIED BY 'sptech';
 GRANT ALL ON bdSPHack.* TO aluno;
+
+INSERT INTO bdsphack.tbuser (nomeUser, emailUser, senhaUser)
+VALUES ('Felipe Santos', 'felipe.almeida@sptech.school', '12345678')
+    , ('Bruna Santana', 'Brubs@gmail.com', '12345678')
+    , ('Thiago Mendonça', 'Thigos@gmail.com', '12345678')
+    , ('João Bezerra', 'JB@gmail.com', '12345678');

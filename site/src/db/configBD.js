@@ -27,3 +27,7 @@ function queryBD(instrucao) {
         });
     });
 }
+
+module.exports = {
+    queryBD
+}

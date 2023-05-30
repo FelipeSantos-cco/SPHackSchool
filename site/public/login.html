@@ -19,7 +19,7 @@
         <div class="conteiner">
             <h1>SPHack</h1>
             <ul class="navBar">
-                <li><a href="./index.html">HOME</a></li>
+                <li><a href="/">HOME</a></li>
                 <li>|</li>
                 <li><a href="#">LOGIN</a></li>
                 <li><a href="">CADASTRE-SE</a></li>
@@ -42,7 +42,7 @@
                 <p>E-mail</p>
                 <input type="text" id="ipt_email_login" placeholder="nome_email@gmail.com">
                 <p>Senha</p>
-                <input type="password" id="ipt_senha_login" placeholder="******" >
+                <input type="password" id="ipt_senha_login" placeholder="******">
                 <button onclick="logar()">Entrar</button>
             </div>
 
@@ -50,24 +50,24 @@
     </div>
 
     <!--Fim do formulário de Login-->
- 
+
 </body>
 
 </html>
 
 <script>
     var erro = false;
-    
-    function logar(){
-        var email = ipt_email_login.value;
-        var senha = ipt_senha_login.value;
+
+    function logar() {
+        var email_html = ipt_email_login.value;
+        var senha_html = ipt_senha_login.value;
 
         // console.log(email.includes('@'));
 
-        var check_email = email == "" || (email.includes('@')) == false;
-        var check_senha = senha.length <= 5;
+        var check_email = email_html == "" || (email_html.includes('@')) == false;
+        var check_senha = senha_html.length <= 5;
 
-        if(check_email){
+        if (check_email) {
             alert(`Por favor, coloque um e-mail válido`);
             ipt_email_login.style = 'border: 3px solid red;'
             ipt_email_login.focus();
@@ -75,7 +75,7 @@
             erro = true;
         }
 
-        if(check_senha){
+        if (check_senha) {
             alert(`Por favor, coloque uma senha mais segura. Com no mínimo 6 caracteres`);
             ipt_senha_login.style = 'border: 3px solid red;'
             ipt_senha_login.focus();
@@ -83,13 +83,51 @@
             erro = true;
         }
 
-        if(!erro){
+        if (!erro) {
+            fetch("/user/logar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email_html: email_html,
+                    senha_html: senha_html
+                })
+            }).then((resposta) => {
 
+                if (resposta.ok) {
+                    // console.log(resposta);
 
+                    resposta.json().then(json => {
+                        // console.log(json);
+                        // console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USER = json.email;
+                        sessionStorage.NOME_USER = json.nome;
+                        sessionStorage.ID_USER = json.id;
+
+                        setTimeout(() => { window.location = "./secret/meusCursos.html"; }, 1000);
+
+                    });
+                }
+                else {
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        finalizarAguardar(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
         }
 
 
-        erro = false;
+    erro = false;
     }
 
 
