@@ -5,6 +5,7 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USER;
 
     if (email != null && nome != null) {
+        span_nome_user.innerHTML = nome;
         console.log("Sessão OK :)");
 
     } 

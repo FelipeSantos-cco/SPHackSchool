@@ -83,3 +83,7 @@ VALUES ('Felipe Santos', 'felipe.almeida@sptech.school', '12345678')
 
 SELECT * FROM bdsphack.tbuser;
 DELETE FROM bdsphack.tbuser WHERE idUser >=5;
+
+ALTER TABLE bdsphack.tbCurso ADD COLUMN estrelasCurso INT;
+
+DESC bdsphack.tbCurso;
