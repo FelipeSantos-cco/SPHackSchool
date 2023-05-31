@@ -19,8 +19,16 @@ function logar(email, senha){
     return database.queryBD(query);
 }
 
+function cadastrar(nome, email, senha){
+    info("Cadastrar");
+    
+    var query = `INSERT INTO tbUser (nomeUser, emailUser, senhaUser) VALUES ('${nome}', '${email}', '${senha}')`
+    return database.queryBD(query);
+}
+
 
 module.exports = {
     listar,
-    logar
+    logar,
+    cadastrar
 };

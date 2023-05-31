@@ -22,7 +22,7 @@
                 <li><a href="/">HOME</a></li>
                 <li>|</li>
                 <li><a href="#">LOGIN</a></li>
-                <li><a href="">CADASTRE-SE</a></li>
+                <li><a href="./cadastro.html">CADASTRE-SE</a></li>
             </ul>
         </div>
     </div>
@@ -51,6 +51,12 @@
 
     <!--Fim do formulário de Login-->
 
+    <footer class="rodaPe">
+        <div class="conteiner">
+            <p>Felipe Santos - SPTech</p>
+            <p>Apoio: Guia de TI</p>
+        </div>
+    </footer>
 </body>
 
 </html>
@@ -109,13 +115,18 @@
                         setTimeout(() => { window.location = "./secret/meusCursos.html"; }, 1000);
 
                     });
+
+                    // console.log(sessionStorage.NOME_USER);
+                    // console.log(sessionStorage.EMAIL_USER);
+                    // console.log(sessionStorage.ID_USER);
+
                 }
                 else {
                     console.log("Houve um erro ao tentar realizar o login!");
 
                     resposta.text().then(texto => {
                         console.error(texto);
-                        finalizarAguardar(texto);
+                        alert(texto);
                     });
                 }
 

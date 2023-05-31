@@ -80,3 +80,6 @@ VALUES ('Felipe Santos', 'felipe.almeida@sptech.school', '12345678')
     , ('Bruna Santana', 'Brubs@gmail.com', '12345678')
     , ('Thiago Mendonça', 'Thigos@gmail.com', '12345678')
     , ('João Bezerra', 'JB@gmail.com', '12345678');
+
+SELECT * FROM bdsphack.tbuser;
+DELETE FROM bdsphack.tbuser WHERE idUser >=5;

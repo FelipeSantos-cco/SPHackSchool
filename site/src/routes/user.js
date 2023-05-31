@@ -22,6 +22,11 @@ rota.post("/logar", (req, res) =>{
     userController.logar(req, res);
 });
 
+rota.post("/cadastrar", (req, res) => {
+    info("Cadastrar");
+    userController.cadastrar(req, res);
+});
+
 
 // Exporta a rota 
 module.exports = rota;

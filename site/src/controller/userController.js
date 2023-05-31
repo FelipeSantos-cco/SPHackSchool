@@ -41,7 +41,7 @@ function logar(req, res){
             .then(
                 function (resultado) {
 
-                    // console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                    //console.log(`${resultado.length}`);
 
                     if (resultado.length == 1) {
                         console.log(resultado);
@@ -68,8 +68,42 @@ function logar(req, res){
     }
 }
 
+function cadastrar(req, res){
+
+    var senha = req.body.senha_html;
+    var email = req.body.email_html;
+    var nome = req.body.nome_html;
+
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senha == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else {
+        
+        userModel.cadastrar(nome, email, senha)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
 // Exportando as funções
 module.exports = {
     listar,
-    logar
+    logar,
+    cadastrar
 }

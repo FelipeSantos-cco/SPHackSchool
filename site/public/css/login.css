@@ -21,6 +21,7 @@
     border: 1px solid #00E000;
     border-radius: 25px;
     padding: 2%;
+    width: 35%;
 }
 
 .form .box button{
@@ -29,6 +30,7 @@
     background-color: #00E000;
     margin-top: 10%;
     color: white;
+    height: 25px;
 }
 
 .form .box p{
@@ -38,4 +40,5 @@
 .form .box input{
     border: 1px solid #00E000;
     border-radius: 8px;
+    height: 25px;
 }

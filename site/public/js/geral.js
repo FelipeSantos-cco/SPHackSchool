@@ -1,8 +1,8 @@
 function validarSessao() {
     // aguardar();
 
-    var email = sessionStorage.EMAIL_USUARIO;
-    var nome = sessionStorage.NOME_USUARIO;
+    var email = sessionStorage.EMAIL_USER;
+    var nome = sessionStorage.NOME_USER;
 
     if (email != null && nome != null) {
         console.log("Sessão OK :)");
