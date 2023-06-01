@@ -1,31 +1,31 @@
 var userModel = require("../models/userModel")
 
-function info(msg){
+function info(msg) {
     console.log(`[User Controller] Executando: ${msg}`);
 }
 
-function listar(req, res){
+function listar(req, res) {
     info("Listar");
-    
+
     userModel.listar()
-    .then((resultado) => {
+        .then((resultado) => {
 
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
-        } 
-        else {
-            res.status(204).send("Nenhum resultado encontrado!")
-        }
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            }
+            else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
 
-    }).catch( (erro) => {
+        }).catch((erro) => {
             console.log(erro);
             console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
             res.status(500).json(erro.sqlMessage);
         }
-    );
+        );
 }
 
-function logar(req, res){
+function logar(req, res) {
     info("Logar");
 
     var email = req.body.email_html;
@@ -36,7 +36,7 @@ function logar(req, res){
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         userModel.logar(email, senha)
             .then(
                 function (resultado) {
@@ -47,14 +47,14 @@ function logar(req, res){
                         console.log(resultado);
                         res.json(resultado[0]);
 
-                    } 
+                    }
                     else if (resultado.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
-                    
-                    } 
+
+                    }
                     else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
-                    
+
                     }
                 }
             ).catch(
@@ -68,7 +68,7 @@ function logar(req, res){
     }
 }
 
-function cadastrar(req, res){
+function cadastrar(req, res) {
 
     var senha = req.body.senha_html;
     var email = req.body.email_html;
@@ -81,7 +81,7 @@ function cadastrar(req, res){
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
-        
+
         userModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {

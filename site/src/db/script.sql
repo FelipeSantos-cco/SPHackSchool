@@ -89,6 +89,8 @@ ALTER TABLE bdsphack.tbCurso ADD COLUMN estrelasCurso INT;
 DESC bdsphack.tbCurso;
 
 SELECT * FROM bdsphack.tbplataforma;
+
+SELECT * FROM bdsphack.tbplataforma WHERE nomePlataforma LIKE '%code%';
 DELETE FROM bdsphack.tbplataforma WHERE idPlataforma > 0;
 
 ALTER TABLE bdsphack.tbcurso RENAME COLUMN nomeCuro TO nomeCurso;

@@ -1,17 +1,25 @@
 const database = require("../db/configBD")
 
-function info(msg){
+function info(msg) {
     console.log(`[Model] Executando no BD: ${msg}`);
 }
 
 
-function buscar(busca){
+function buscar(busca) {
     var query = `SELECT * FROM bdsphack.tbcurso WHERE nomeCurso LIKE '%${busca}%';`;
     info(query)
-    
+
     return database.queryBD(query);
 }
 
-module.exports ={
-    buscar
+function buscaPlat(busca) {
+    var query = `SELECT * FROM bdsphack.tbplataforma WHERE nomePlataforma LIKE '%${busca}%';`;
+    info(query)
+
+    return database.queryBD(query);
+}
+
+module.exports = {
+    buscar,
+    buscaPlat
 }
