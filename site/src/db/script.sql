@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS tbFavoritos(
     , FOREIGN KEY (fkCurso) REFERENCES tbCurso(idCurso)
     , dataHoraAdd DATETIME COMMENT 'Data e hora de quando foi adicionado aos favoritos do usuário'
     , PRIMARY KEY (fkUser, fkCurso)
-);
+) COMMENT 'Junção da tabela de cursos e usuário para selecionar os favoritos de cada user';
 
 -- Função para retornar o Id da plataforma com base a url da plataforma
 DELIMITER $$
@@ -87,3 +87,6 @@ DELETE FROM bdsphack.tbuser WHERE idUser >=5;
 ALTER TABLE bdsphack.tbCurso ADD COLUMN estrelasCurso INT;
 
 DESC bdsphack.tbCurso;
+
+SELECT * FROM bdsphack.tbplataforma;
+DELETE FROM bdsphack.tbplataforma WHERE idPlataforma > 0;
