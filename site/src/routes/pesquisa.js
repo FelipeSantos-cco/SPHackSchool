@@ -12,5 +12,8 @@ rota.get("/:busca", (req, res) => {
     pesquisaController.buscar(req, res);
 });
 
+rota.get("/noticias", (req, res)=> {
+    info("Noticias")
+});
 
 module.exports = rota;

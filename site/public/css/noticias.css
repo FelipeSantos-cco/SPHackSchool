@@ -1,0 +1,10 @@
+.topCursos .conteiner .caixa{
+    width: 80%;
+    border-left: none;
+    border-right: none;
+}
+
+.topCursos .conteiner .noticia{
+    display: flex;
+    flex-direction: column;
+}

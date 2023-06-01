@@ -75,22 +75,22 @@ DELIMITER ;
 CREATE USER aluno IDENTIFIED BY 'sptech';
 GRANT ALL ON bdSPHack.* TO aluno;
 
-INSERT INTO bdsphack.tbuser (nomeUser, emailUser, senhaUser)
+INSERT INTO bdSPHack.tbUser (nomeUser, emailUser, senhaUser)
 VALUES ('Felipe Santos', 'felipe.almeida@sptech.school', '12345678')
     , ('Bruna Santana', 'Brubs@gmail.com', '12345678')
     , ('Thiago Mendonça', 'Thigos@gmail.com', '12345678')
     , ('João Bezerra', 'JB@gmail.com', '12345678');
 
-SELECT * FROM bdsphack.tbuser;
-DELETE FROM bdsphack.tbuser WHERE idUser >=5;
+SELECT * FROM bdSPHack.tbUser;
+DELETE FROM bdSPHack.tbUser WHERE idUser >=5;
 
-ALTER TABLE bdsphack.tbCurso ADD COLUMN estrelasCurso INT;
+ALTER TABLE bdSPHack.tbCurso ADD COLUMN estrelasCurso INT;
 
-DESC bdsphack.tbCurso;
+DESC bdSPHack.tbCurso;
 
-SELECT * FROM bdsphack.tbplataforma;
+SELECT * FROM bdSPHack.tbPlataforma;
 
-SELECT * FROM bdsphack.tbplataforma WHERE nomePlataforma LIKE '%code%';
-DELETE FROM bdsphack.tbplataforma WHERE idPlataforma > 0;
+SELECT * FROM bdSPHack.tbPlataforma WHERE nomePlataforma LIKE '%code%';
+DELETE FROM bdSPHack.tbPlataforma WHERE idPlataforma > 0;
 
-ALTER TABLE bdsphack.tbcurso RENAME COLUMN nomeCuro TO nomeCurso;
+-- ALTER TABLE bdSPHack.tbCurso RENAME COLUMN nomeCuro TO nomeCurso;

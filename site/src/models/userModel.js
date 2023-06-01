@@ -8,13 +8,13 @@ function info(msg){
 
 // Export ----
 function listar(){
-    var query = `SELECT * FROM bdsphack.tbUser`;
+    var query = `SELECT * FROM bdSPHack.tbUser`;
     info(query)
     return database.queryBD(query);
 }
 
 function logar(email, senha){
-    var query = `SELECT * FROM bdsphack.tbUser WHERE emailUser = '${email}' AND senhaUser = '${senha}'`;
+    var query = `SELECT * FROM bdSPHack.tbUser WHERE emailUser = '${email}' AND senhaUser = '${senha}'`;
     info(query)
     return database.queryBD(query);
 }
@@ -22,7 +22,7 @@ function logar(email, senha){
 function cadastrar(nome, email, senha){
     info("Cadastrar");
     
-    var query = `INSERT INTO tbUser (nomeUser, emailUser, senhaUser) VALUES ('${nome}', '${email}', '${senha}')`
+    var query = `INSERT INTO bdSPHack.tbUser (nomeUser, emailUser, senhaUser) VALUES ('${nome}', '${email}', '${senha}')`
     return database.queryBD(query);
 }
 
