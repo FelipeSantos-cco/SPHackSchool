@@ -75,4 +75,5 @@ SELECT * FROM tbcurso WHERE fkPlataforma = bdSPHack.fn_nomePlat('https://www.ev.
 SELECT COUNT(idCurso) FROM bdsphack.tbcurso;
 SELECT COUNT(idPlataforma) FROM bdsphack.tbplataforma;
 -- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
+-- Teste
+SELECT * FROM bdsphack.tbcurso WHERE nomeCuro LIKE '%HTML%';

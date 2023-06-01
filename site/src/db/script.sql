@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS tbCurso(
     idCurso INT PRIMARY KEY AUTO_INCREMENT
     , fkPlataforma INT COMMENT 'id da tbPlataforma'
     , FOREIGN KEY (fkPlataforma) REFERENCES tbPlataforma(idPlataforma)
-    , nomeCuro VARCHAR(120) COMMENT 'Nome do curso'
+    , nomeCurso VARCHAR(120) COMMENT 'Nome do curso'
     , descCurso TEXT COMMENT 'Descrição do curso'
     , tipoValor VARCHAR(20) CHECK (tipoValor IN ('gratuito', 'pago') ) COMMENT 'Verifica se o curso é pago ou não'
     , urlCurso TEXT COMMENT 'URL da Curso'
@@ -90,3 +90,5 @@ DESC bdsphack.tbCurso;
 
 SELECT * FROM bdsphack.tbplataforma;
 DELETE FROM bdsphack.tbplataforma WHERE idPlataforma > 0;
+
+ALTER TABLE bdsphack.tbcurso RENAME COLUMN nomeCuro TO nomeCurso;

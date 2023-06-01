@@ -7,6 +7,7 @@ const cors = require("cors");
 // -------------------------------------------------
 const indexRota = require("./src/routes/index");
 const userRota = require("./src/routes/user");
+const pesquisaRota = require("./src/routes/pesquisa")
 
 
 // -------------------------------------------------
@@ -20,6 +21,7 @@ app.use(cors());
 // Rotas-----------------------------------
 app.use("/", indexRota);
 app.use("/user", userRota);
+app.use("/pesquisa", pesquisaRota);
 
 
 app.listen(porta, ()=>{
