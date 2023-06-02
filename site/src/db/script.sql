@@ -36,6 +36,12 @@ CREATE TABLE IF NOT EXISTS tbFavoritos(
     , PRIMARY KEY (fkUser, fkCurso)
 ) COMMENT 'Junção da tabela de cursos e usuário para selecionar os favoritos de cada user';
 
+CREATE TABLE IF NOT EXISTS bdSPHack.tbAdm(
+    idAdm INT PRIMARY KEY AUTO_INCREMENT
+    , loginAdm VARCHAR(60)
+    , senhAdm VARCHAR(16)
+);
+
 -- Função para retornar o Id da plataforma com base a url da plataforma
 DELIMITER $$
 CREATE FUNCTION bdSPHack.fn_nomePlat(linkPlat TEXT) 
