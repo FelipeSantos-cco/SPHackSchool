@@ -27,8 +27,17 @@ function cadastrar(nome, email, senha){
 }
 
 
+function favoritar(idUser, idCurso){
+    info("Favoritar");
+    var query = `INSERT INTO bdSPHack.tbFavoritos VALUES ('${idUser}', '${idCurso}', NOW())`
+
+    return database.queryBD(query);
+}
+
+
 module.exports = {
     listar,
     logar,
-    cadastrar
+    cadastrar,
+    favoritar
 };

@@ -94,3 +94,5 @@ SELECT * FROM bdSPHack.tbPlataforma WHERE nomePlataforma LIKE '%code%';
 DELETE FROM bdSPHack.tbPlataforma WHERE idPlataforma > 0;
 
 -- ALTER TABLE bdSPHack.tbCurso RENAME COLUMN nomeCuro TO nomeCurso;
+
+SELECT * FROM bdSPHack.tbFavoritos;

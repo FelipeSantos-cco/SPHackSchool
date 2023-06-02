@@ -27,6 +27,11 @@ rota.post("/cadastrar", (req, res) => {
     userController.cadastrar(req, res);
 });
 
+rota.post("/favoritar", (req, res) => {
+    info("Favoritar");
+    userController.favoritar(req, res);
+});
+
 
 // Exporta a rota 
 module.exports = rota;

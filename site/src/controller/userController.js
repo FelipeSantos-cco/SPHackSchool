@@ -100,10 +100,32 @@ function cadastrar(req, res) {
     }
 }
 
+function favoritar(req, res){
+
+    var idUser = req.body.idUser;
+    var idCurso = req.body.idCurso;
+
+    userModel.favoritar(idUser, idCurso)
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao Favoritar! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
 
 // Exportando as funções
 module.exports = {
     listar,
     logar,
-    cadastrar
+    cadastrar,
+    favoritar
 }
