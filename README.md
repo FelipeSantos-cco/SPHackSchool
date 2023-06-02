@@ -22,4 +22,4 @@ Particularmente eu gosto de ensinar as coisas que sei, então nada mais justo qu
 ---
 
 ### Banco de Dados
-<img src="https://github.com/FelipeSantos-cco/SPHackSchool/assets/125617308/635f28a1-d4c7-43aa-8771-ecc2f4683e3e" width="500px;"/>
+<img src="https://github.com/FelipeSantos-cco/SPHackSchool/assets/125617308/c989c82b-0186-4a18-a3c1-1db438d5808e" width="500px;"/>
