@@ -13,7 +13,7 @@
 <summary>Nota de Agradecimento a Guia de TI</summary>
 <br>
 	
-> Eu gostaria de expressar minha sincera gratidão à Plataforma Guia de TI por fornecer acesso à sua API para o meu projeto acadêmico. O apoio generoso e a oportunidade de utilizar os recursos da plataforma foram de imensa ajuda para o desenvolvimento do meu trabalho. Gostaria de agradecer à equipe da Plataforma Guia de TI por sua prontidão em fornecer a API e por tornar essa experiência possível. Estou profundamente grato pelo suporte oferecido e gostaria de destacar que todas as referências e créditos devidos serão devidamente atribuídos no projeto. Obrigado novamente pelo apoio e pela contribuição valiosa para o meu trabalho acadêmico.
+> Eu gostaria de expressar minha sincera gratidão à Plataforma Guia de TI por fornecer acesso à sua API para o meu projeto acadêmico. O apoio generoso e a oportunidade de utilizar os recursos da plataforma foram de imensa ajuda para o desenvolvimento do meu trabalho. Gostaria de agradecer à equipe da por sua prontidão e por tornar essa experiência possível. Estou profundamente grato pelo suporte oferecido e gostaria de destacar que todas as referências e créditos devidos serão devidamente atribuídos no projeto. Obrigado novamente pelo apoio e pela contribuição valiosa para o meu trabalho acadêmico.
 </details>
 
 ---
