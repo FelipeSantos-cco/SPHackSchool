@@ -7,10 +7,16 @@ function validarSessao() {
     if (email != null && nome != null) {
         span_nome_user.innerHTML = nome;
         console.log("Sessão OK :)");
-
-    } 
+    }
     else {
         alert(`Faça o login para poder ter acesso a essa página`);
         window.location = "../login.html";
     }
+}
+
+function sair(){
+    sessionStorage.EMAIL_USER = null;
+    sessionStorage.NOME_USER = null;
+
+    window.location = "../login.html"
 }

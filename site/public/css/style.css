@@ -40,6 +40,7 @@ body {
 }
 
 .navBar a {
+    cursor: pointer;
     text-decoration: none;
     color: #00E000;
 }
@@ -204,3 +205,7 @@ p {
 }
 
 /*Fim da manipulação do Rodapé*/
+
+button{
+    cursor: pointer;
+}
