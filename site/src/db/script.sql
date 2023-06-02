@@ -96,3 +96,8 @@ DELETE FROM bdSPHack.tbPlataforma WHERE idPlataforma > 0;
 -- ALTER TABLE bdSPHack.tbCurso RENAME COLUMN nomeCuro TO nomeCurso;
 
 SELECT * FROM bdSPHack.tbFavoritos;
+
+SELECT nomeCurso, tipoValor, urlCurso, urlImgCurso 
+FROM bdSPHack.tbFavoritos as fav 
+    INNER JOIN bdSPHack.tbCurso as cur ON fav.fkCurso = cur.idCurso
+        WHERE fkUser = 1;

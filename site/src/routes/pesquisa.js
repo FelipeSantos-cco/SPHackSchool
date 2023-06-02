@@ -21,4 +21,9 @@ rota.get("/buscaPlat/:busca", (req, res) => {
     pesquisaController.buscaPlat(req, res);
 });
 
+rota.get("/buscaFav/:idUser", (req, res) => {
+    info("Favoritos");
+    pesquisaController.buscaFavorito(req, res);
+});
+
 module.exports = rota;

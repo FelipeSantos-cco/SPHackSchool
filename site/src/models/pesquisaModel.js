@@ -1,7 +1,7 @@
 const database = require("../db/configBD")
 
 function info(msg) {
-    console.log(`[Model] Executando no BD: ${msg}`);
+    console.log(`[Pesquisa Model] Executando no BD: ${msg}`);
 }
 
 
@@ -19,7 +19,21 @@ function buscaPlat(busca) {
     return database.queryBD(query);
 }
 
+function buscaFavorito(idUser){
+    var query = `
+    SELECT nomeCurso, tipoValor, urlCurso, urlImgCurso 
+        FROM bdSPHack.tbFavoritos as fav 
+        INNER JOIN bdSPHack.tbCurso as cur ON fav.fkCurso = cur.idCurso
+            WHERE fkUser = ${idUser};`
+    
+    info(query)
+
+    return database.queryBD(query);
+
+}
+
 module.exports = {
     buscar,
-    buscaPlat
+    buscaPlat,
+    buscaFavorito
 }
