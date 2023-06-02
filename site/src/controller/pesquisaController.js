@@ -5,7 +5,7 @@ function info(msg) {
 }
 
 function buscar(req, res) {
-    info("Buscar");
+    info("Buscar Curso");
 
     var busca = req.params.busca;
 
@@ -31,6 +31,35 @@ function buscar(req, res) {
     }
 }
 
+function buscaPlat(req, res){
+    info("Buscar Plataforma");
+
+    var busca = req.params.busca;
+
+    if (busca != "" && busca != undefined) {
+        pesquisaModel.buscaPlat(busca).then((resultado) => {
+
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            }
+            else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+
+        }).catch((erro) => {
+            console.log(erro);
+            console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+    }
+    else {
+        res.status(400).send("Sua busca está vazia ou undefined");
+    }
+
+}
+
 module.exports = {
-    buscar
+    buscar,
+    buscaPlat
 }

@@ -8,12 +8,17 @@ function info(msg){
 }
 
 rota.get("/:busca", (req, res) => {
-    info("buscar");
+    info("Buscar cursos");
     pesquisaController.buscar(req, res);
 });
 
 rota.get("/noticias", (req, res)=> {
     info("Noticias")
+});
+
+rota.get("/buscaPlat/:busca", (req, res) => {
+    info("Buscar Plataformas");
+    pesquisaController.buscaPlat(req, res);
 });
 
 module.exports = rota;
