@@ -29,4 +29,4 @@ Venha fazer parte da comunidade SPHack e descubra um mundo de possibilidades. Ca
 ---
 
 ### Banco de Dados
-<img src="https://github.com/FelipeSantos-cco/SPHackSchool/assets/125617308/c989c82b-0186-4a18-a3c1-1db438d5808e" width="500px;"/>
+<img src="https://github.com/FelipeSantos-cco/SPHackSchool/assets/125617308/c6f77b11-01b7-46b8-9523-d7ed6cc0734d" width="500px;"/>
