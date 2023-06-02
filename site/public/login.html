@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHack | Login </title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+
+</head>
+
+<body>
+
+    <!--Início do Header -->
+    <div class="header">
+        <div class="conteiner">
+            <h1>SPHack</h1>
+            <ul class="navBar">
+                <li><a href="/">HOME</a></li>
+                <li>|</li>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="./cadastro.html">CADASTRE-SE</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--Fim do Header -->
+
+    <!--Início do banner -->
+    <div class="banner">
+        <div class="conteiner"></div>
+    </div>
+    <!--Fim do banner -->
+
+    <!--Início do formulário de Login-->
+    <div class="form">
+        <div class="conteiner">
+            <div class="box">
+                <h1>LOGIN</h1>
+                <p>E-mail</p>
+                <input type="text" id="ipt_email_login" placeholder="nome_email@gmail.com">
+                <p>Senha</p>
+                <input type="password" id="ipt_senha_login" placeholder="******">
+                <button onclick="logar()">Entrar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Fim do formulário de Login-->
+
+    <footer class="rodaPe">
+        <div class="conteiner">
+            <p>Felipe Santos - SPTech</p>
+            <p>Apoio: Guia de TI</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    var erro = false;
+
+    function logar() {
+        var email_html = ipt_email_login.value;
+        var senha_html = ipt_senha_login.value;
+
+        // console.log(email.includes('@'));
+
+        var check_email = email_html == "" || (email_html.includes('@')) == false;
+        var check_senha = senha_html.length <= 5;
+
+        if (check_email) {
+            alert(`Por favor, coloque um e-mail válido`);
+            ipt_email_login.style = 'border: 3px solid red;'
+            ipt_email_login.focus();
+
+            erro = true;
+        }
+
+        if (check_senha) {
+            alert(`Por favor, coloque uma senha mais segura. Com no mínimo 6 caracteres`);
+            ipt_senha_login.style = 'border: 3px solid red;'
+            ipt_senha_login.focus();
+
+            erro = true;
+        }
+
+        if (!erro) {
+            fetch("/user/logar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email_html: email_html,
+                    senha_html: senha_html
+                })
+            }).then((resposta) => {
+
+                if (resposta.ok) {
+                    // console.log(resposta);
+
+                    resposta.json().then(json => {
+                        // console.log(json);
+                        // console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USER = json.emailUser;
+                        sessionStorage.NOME_USER = json.nomeUser;
+                        sessionStorage.ID_USER = json.idUser;
+
+                        setTimeout(() => { window.location = "./secret/meusCursos.html"; }, 1000);
+
+                    });
+
+                    // console.log(sessionStorage.NOME_USER);
+                    // console.log(sessionStorage.EMAIL_USER);
+                    // console.log(sessionStorage.ID_USER);
+
+                }
+                else {
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        alert(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
+        }
+
+
+        erro = false;
+    }
+
+
+</script>

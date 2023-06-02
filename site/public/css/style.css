@@ -40,6 +40,7 @@ body {
 }
 
 .navBar a {
+    cursor: pointer;
     text-decoration: none;
     color: #00E000;
 }
@@ -52,12 +53,14 @@ body {
 
 /* Início da manipulação do Banner */
 .banner {
-    width: 100%;
+    width: 99%;
+    margin: auto;
     height: 480px;
     color: #00E000;
     background-image: url("../assets/img/SPhack.png");
     background-attachment: fixed;
     background-position: center;
+    border-radius: 50px;
 }
 
 .banner .conteiner {
@@ -106,13 +109,19 @@ body {
 }
 
 .conteiner .card img {
+    width: 40%;
+    height: 40%;
+    border-radius: 25px;
+    margin-top: 5px;
+}   
+
+.indexCard img{
     width: 150px;
     height: 150px;
 }
 
 .caixaCards .conteiner {
-    padding: 10px 5px;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .card {
@@ -121,15 +130,34 @@ body {
     align-items: center;
     text-align: center;
     border: solid 1px #00e000;
-    margin: 1%;
+    margin: 1.5%;
     border-radius: 25px;
     background-color: #05001bf1;
     padding: 5px;
+    width: 33%;
 }
 
 .card h2,
 p {
     color: white;
+}
+
+.caixaCard-especial{
+    margin-top: 4%;
+}
+
+.conteiner .card-especial{
+    width: 90%;
+    margin:auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.conteiner .card-especial img{
+    width: 150px;
+    height: 150px;
 }
 
 /* Fim da manipulação dos Cards */
@@ -160,9 +188,38 @@ p {
 }
 
 .conteudo .conteiner .caixa_p {
-    margin-left: 25px;
-    margin-top: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2.2%;
     text-align: center;
+    font-weight: 700;
 }
 
 /* Fim da manipulação do conteúdo*/
+
+/*Inicio da manipulação do Rodapé*/
+
+.rodaPe {
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: black;
+    color: #fff;
+    border-top: 2px dotted #00E000;
+}
+
+.rodaPe .conteiner {
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodaPe .conteiner p{
+    margin: 2px;
+}
+
+/*Fim da manipulação do Rodapé*/
+
+button{
+    cursor: pointer;
+}

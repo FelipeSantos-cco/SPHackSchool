@@ -1,0 +1,44 @@
+.banner {
+    height: 430;
+    background-image: url("../assets/img/SPhack-login.png");
+}
+
+.form{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form .conteiner{
+    align-items: center;
+    justify-content: center;
+}
+
+.form .box {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #00E000;
+    border-radius: 25px;
+    padding: 2%;
+    width: 35%;
+}
+
+.form .box button{
+    border: 1px solid #00E000;
+    border-radius: 10px;
+    background-color: #00E000;
+    margin-top: 10%;
+    color: white;
+    height: 25px;
+}
+
+.form .box p{
+    margin-bottom: 0px;
+}
+
+.form .box input{
+    border: 1px solid #00E000;
+    border-radius: 8px;
+    height: 25px;
+}

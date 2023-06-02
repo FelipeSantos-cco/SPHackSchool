@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHack | Cadastro </title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+
+</head>
+
+<body>
+
+    <!--Início do Header -->
+    <div class="header">
+        <div class="conteiner">
+            <h1>SPHack</h1>
+            <ul class="navBar">
+                <li><a href="/">HOME</a></li>
+                <li>|</li>
+                <li><a href="./login.html">LOGIN</a></li>
+                <li><a href="#">CADASTRE-SE</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--Fim do Header -->
+
+    <!--Início do banner -->
+    <div class="banner">
+        <div class="conteiner"></div>
+    </div>
+    <!--Fim do banner -->
+
+    <!--Início do formulário de Login-->
+    <div class="form">
+        <div class="conteiner">
+            <div class="box">
+                <h1>CADASTRO</h1>
+                <p>Nome</p>
+                <input type="text" id="ipt_nome_cadastro" placeholder="EX: Felipe Santos">
+
+                <p>E-mail</p>
+                <input type="text" id="ipt_email_cadastro" placeholder="EX: nome_email@gmail.com">
+
+                <p>Confirmar E-mail</p>
+                <input type="text" id="ipt_email_cadastro_confirmar" placeholder="EX: nome_email@gmail.com">
+
+                <p>Senha</p>
+                <input type="password" id="ipt_senha_cadastro" placeholder="******">
+
+                <p>Confirmar Senha</p>
+                <input type="password" id="ipt_senha_cadastro_confirmar" placeholder="******">
+                <button onclick="cadastrar()">Cadastrar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Fim do formulário de Login-->
+
+    <footer class="rodaPe">
+        <div class="conteiner">
+            <p>Felipe Santos - SPTech</p>
+            <p>Apoio: Guia de TI</p>
+        </div>
+    </footer>
+</body>
+
+<script>
+
+    var erro = false;
+
+    function cadastrar() {
+        var nome_html = ipt_nome_cadastro.value;
+        var email_html = ipt_email_cadastro.value;
+        var senha_html = ipt_senha_cadastro.value;
+        var email_cofirmar = ipt_email_cadastro_confirmar.value;
+        var senha_confirmar = ipt_senha_cadastro_confirmar.value;
+
+        var check_nome = nome_html == "" && nome_html.length <= 3;
+        var check_email_campo = (email_html == "" || (email_html.includes('@')) == false) || (email_cofirmar == "" || (email_cofirmar.includes('@')) == false);
+        var check_email_confirmar = email_html != email_cofirmar;
+        var check_senha_campo = senha_html.length <= 5 || senha_html != senha_confirmar
+
+        if (check_nome) {
+            alert(`Preencha o nome corretamente, com mais de 3 caracteres`);
+            erro = true;
+        }
+
+        if (check_email_campo) {
+            alert(`Insira um e-mail válido!`);
+            erro = true;
+        }
+
+        if (check_email_confirmar) {
+            alert(`O campo de Confirmar E-mail é diferente do email colocado antes`);
+            erro = true;
+        }
+
+        if (check_senha_campo) {
+            alert(`O campo de confirmar senha é diferente da senha colocada antes`);
+            erro = true;
+        }
+
+        if (!erro) {
+            fetch("/user/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome_html: nome_html,
+                    email_html: email_html,
+                    senha_html: senha_html
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                    setTimeout(() => { window.location = "./login.html"; }, 1000);
+
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+        }
+
+
+        erro = false
+    }
+
+</script>
