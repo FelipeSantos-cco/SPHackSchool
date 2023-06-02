@@ -1,7 +1,7 @@
 # São Paulo Hack School - SPHackSchool 
 ## Projeto Individual da matéria de Pesquisa e Inovação
 
-### Parceiros
+### Parceiro
 
 <table align="center">
   <tr>
@@ -9,15 +9,22 @@
   </tr>
 </table>
 
+<details open>
+<summary>Nota de Agradecimento a Guia de TI</summary>
+<br>
+	
 > Eu gostaria de expressar minha sincera gratidão à Plataforma Guia de TI por fornecer acesso à sua API para o meu projeto acadêmico. O apoio generoso e a oportunidade de utilizar os recursos da plataforma foram de imensa ajuda para o desenvolvimento do meu trabalho. Gostaria de agradecer à equipe da Plataforma Guia de TI por sua prontidão em fornecer a API e por tornar essa experiência possível. Estou profundamente grato pelo suporte oferecido e gostaria de destacar que todas as referências e créditos devidos serão devidamente atribuídos no projeto. Obrigado novamente pelo apoio e pela contribuição valiosa para o meu trabalho acadêmico.
+</details>
 
 ---
 
-### A SPHackSchool é uma plataforma de ensino sobre conceitos de hacking ético e programação.
+### A SPHackSchool é uma plataforma que reúne mais de 170 plataformas diferentes de cursos
 
-Por um bom tempo tive dificuldades com a pesquisa sobre esse tema (hacking) e desenvolvimentos de trabalhos acadêmicos sobre o mesmo, então a plataforma que proponho é um **site onde ele ensina programação, história do hacking e seus conceitos junto com programação, disponibilizando conteúdos para um aprendizado gradual e contínuo**. 
-	
-Particularmente eu gosto de ensinar as coisas que sei, então nada mais justo que criar uma plataforma que ensine algo que eu gosto, juntando as duas coisas que eu gosto. 
+Durante muito tempo, enfrentei grandes desafios na busca por conteúdos de qualidade relacionados a hacking, programação e outras áreas de TI, especialmente quando se tratava de encontrar cursos gratuitos em um único lugar. Fiquei desperdiçando preciosas horas simplesmente tentando encontrar cursos de qualidade sem custo. Essas dificuldades me levaram a uma conclusão: eu não queria que mais pessoas enfrentassem os mesmos problemas que eu enfrentei. Foi assim que surgiu a SPHack, uma plataforma única e inovadora.
+
+Atualmente temos mais de 170 plataformas diferentes, todas elas oferecendo pelo menos um curso gratuito. Não importa qual seja o seu interesse ou nível de conhecimento, na SPHack você encontrará uma ampla variedade de cursos gratuitos para atender às suas necessidades. Nossa missão é facilitar o acesso a conteúdos de qualidade, promovendo a democratização do conhecimento na área de TI.
+
+Venha fazer parte da comunidade SPHack e descubra um mundo de possibilidades. Cadastre-se agora mesmo e aproveite todos os benefícios que a plataforma tem a oferecer.
 
 ---
 
