@@ -1,7 +1,17 @@
+.banner {
+    height: 430;
+    background-image: url("../assets/img/SPhack-BannerVazio.png");
+}
+
 #div_resp {
     margin-top: 3%;
 }
 
 #p_favoritos {
     margin-top: 3%;
+}
+
+.banner .conteiner h1{
+    font-weight: bold;
+    color: white;
 }

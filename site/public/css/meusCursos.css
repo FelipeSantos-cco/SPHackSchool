@@ -1,6 +1,6 @@
 .banner {
     height: 430;
-    background-image: url("../assets/img/SPhack-area_do_aluno.png");
+    background-image: url("../assets/img/SPhack-area_doAluno.png");
 }
 
 .conteiner .navBar{
@@ -63,4 +63,27 @@
 #div_resp .card a{
     text-decoration: none;
     
+}
+
+.card{
+    background-color: black;
+}
+
+.card button{
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #00E000;
+    color: black;
+    height: 25px;
+    width: 80%;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
+.card .ir{
+    background-color: #a9ffa9;
+    color: black;
 }

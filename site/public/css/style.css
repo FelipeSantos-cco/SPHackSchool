@@ -53,12 +53,14 @@ body {
 
 /* Início da manipulação do Banner */
 .banner {
-    width: 100%;
+    width: 99%;
+    margin: auto;
     height: 480px;
     color: #00E000;
     background-image: url("../assets/img/SPhack.png");
     background-attachment: fixed;
     background-position: center;
+    border-radius: 50px;
 }
 
 .banner .conteiner {
@@ -107,6 +109,13 @@ body {
 }
 
 .conteiner .card img {
+    width: 40%;
+    height: 40%;
+    border-radius: 25px;
+    margin-top: 5px;
+}   
+
+.indexCard img{
     width: 150px;
     height: 150px;
 }
@@ -144,6 +153,11 @@ p {
     margin-bottom: 5%;
     border-radius: 15px;
     background-color: black;
+}
+
+.conteiner .card-especial img{
+    width: 150px;
+    height: 150px;
 }
 
 /* Fim da manipulação dos Cards */
