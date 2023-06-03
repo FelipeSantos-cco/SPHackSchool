@@ -1,0 +1,67 @@
+.banner {
+    background-image: url("../assets/img/SPhack-adm.png");
+}
+
+.header .conteiner .navBar{
+    justify-content: end;
+}
+
+/*INICIO DAS KPIS*/
+
+.h2_resp{
+    color: #00E000;
+}
+
+.kpis{
+    margin-top: 1%;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.kpis .conteiner{
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.kpis .conteiner .caixa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #00E000;
+    border-radius: 25px;
+    margin-top: 3%;
+    padding: 1.5%;
+}
+
+
+.kpis .conteiner .caixa{
+    margin: 1%;
+    margin: auto;
+    width: 25%;
+}
+
+/*FIM DAS KPIS*/
+
+/*INICIO DOS TOP CURSOS*/
+.topCursos{
+    margin-top: 2%;
+}
+
+.topCursos .conteiner{
+    width: 100%;
+}
+
+.topCursos .conteiner .caixa{
+    width: 60%;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    justify-content: space-between;
+}
+
+.topCursos .conteiner .caixa button{
+    margin-bottom: 2%;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHack | Admin</title>
+
+    <script src="../js/geral.js"></script>
+    <script src="../js/adm.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/meusCursos.css">
+    <link rel="stylesheet" href="../css/adm.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+
+    <!--Início do Header -->
+    <div class="header">
+        <div class="conteiner">
+            <h1>SPHack - ADM</h1>
+            <ul class="navBar">
+                <li><a onclick="sair()">
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Fim do Header -->
+
+    <!--Início do banner -->
+    <div class="banner">
+        <div class="conteiner"></div>
+    </div>
+    <!--Fim do banner -->
+
+
+    <div class="kpis">
+        <div class="conteiner">
+            <div class="caixa">
+                <h2>Total de </h2>
+                <h2><span id="h3_totalCursos" class="h2_resp"></span> Cursos</h2>
+            </div>
+
+            <div class="caixa">
+                <h2>Total de </h2>
+                <h2><span id="h2_totalPlataformas" class="h2_resp"></span> Plataformas</h2>
+            </div>
+
+            <div class="caixa">
+                <h2>Total de </h2>
+                <h2><span id="h2_totalUsers" class="h2_resp"></span> Usuários</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="topCursos">
+        <div class="conteiner">
+            <div class="caixa">
+                <h1>TOP CURSOS DO MOMENTO</h1>
+            </div>
+            <div id="div_resp"></div>
+            
+        </div>
+    </div>
+
+
+
+
+    <footer class="rodaPe">
+        <div class="conteiner">
+            <p>Felipe Santos - SPTech</p>
+            <p>Apoio: Guia de TI</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    geral();
+</script>
