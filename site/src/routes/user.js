@@ -13,7 +13,7 @@ function info(msg){
 // });
 
 rota.get("/listar", (req, res) => {
-   info("Listar")
+    info("Listar")
     userController.listar(req, res);
 });
 

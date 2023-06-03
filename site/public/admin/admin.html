@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHack | Admin</title>
+
+    <script src="../js/geral.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/meusCursos.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+
+    <!--Início do Header -->
+    <div class="header">
+        <div class="conteiner">
+            <h1>SPHack</h1>
+            <ul class="navBar">
+                <li><a href="#">CURSOS</a></li>
+                <li><a href="./plataforma.html">PLATAFORMAS</a></li>
+                <li><a href="./perfil.html">
+                        <span id="span_nome_user"></span>
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                    </a>
+                </li>
+                <li><a onclick="sair()">
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Fim do Header -->
+
+    <!--Início do banner -->
+    <div class="banner">
+        <div class="conteiner"></div>
+    </div>
+    <!--Fim do banner -->
+
+
+    <div class="topCursos">
+        <div class="conteiner">
+            <div class="caixa">
+                <h2>Busque o curso que procura</h2>
+                <input type="text" id="ipt_busca">
+                <button onclick="buscar()">Pesquisar</button>
+                <p id="p_encontrados"></p>
+            </div>
+            <h2>Resultado da Pesquisa</h2>
+            <div id="div_resp"></div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="rodaPe">
+        <div class="conteiner">
+            <p>Felipe Santos - SPTech</p>
+            <p>Apoio: Guia de TI</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+    function buscar() {
+        var busca = ipt_busca.value;
+        div_resp.innerHTML = "";
+
+        if (busca.length > 0 && (busca != "" && busca != undefined)) {
+
+            fetch(`/pesquisa/${busca}`, { cache: 'no-store' }).then(function (resposta) {
+                if (resposta.ok) {
+
+                    resposta.json().then(function (resposta) {
+                        resposta.reverse();
+
+                        if (resposta.length > 0) {
+                            p_encontrados.innerHTML = `Foram encontrados ${resposta.length} Cursos`
+                        }
+                        else {
+                            p_encontrados.innerHTML = `Nenhum curso encontrado`
+                        }
+
+                        for (let i = resposta.length - 1; i >= 0; i--) {
+                            var curso = resposta[i];
+                            var img = curso.urlImgCurso;
+
+                            if (img == '-1') {
+                                img = '../assets/sph-gif.gif'
+                            }
+
+                            div_resp.innerHTML += `
+                            <div class="card" >
+                                <img src="${img}">
+                                <h3>${curso.nomeCurso}</h3>
+                                <button onclick="favoritar(${curso.idCurso}, ${sessionStorage.ID_USER})">FAVORITAR</button>
+
+                                <button onclick="curso.urlCurso" class="ir"> 
+                                    <a href="${curso.urlCurso}" target="_blank">
+                                        Acesse o curso clicando aqui
+                                        </a>
+                                </button>
+                                <p>Valor: ${curso.tipoValor}</p>
+                            </div>`
+
+                        }
+                    });
+
+                }
+
+                else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+
+            }).catch(function (error) {
+                console.error(`Erro na pesquisa: ${error.message}`);
+            });
+
+        }
+
+
+    }
+
+    function favoritar(idCurso, idUser) {
+        // console.log(`user: ${idUser}, curso: ${idCurso}`);
+
+        fetch("/user/favoritar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUser: idUser,
+                idCurso: idCurso
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert("Curso Favoritado :)");
+
+            } else {
+                throw ("Houve um erro ao Favoritar!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+</script>

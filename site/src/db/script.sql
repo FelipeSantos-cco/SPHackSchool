@@ -81,11 +81,7 @@ DELIMITER ;
 CREATE USER aluno IDENTIFIED BY 'sptech';
 GRANT ALL ON bdSPHack.* TO aluno;
 
-INSERT INTO bdSPHack.tbUser (nomeUser, emailUser, senhaUser)
-VALUES ('Felipe Santos', 'felipe.almeida@sptech.school', '12345678')
-    , ('Bruna Santana', 'Brubs@gmail.com', '12345678')
-    , ('Thiago Mendonça', 'Thigos@gmail.com', '12345678')
-    , ('João Bezerra', 'JB@gmail.com', '12345678');
+
 
 SELECT * FROM bdSPHack.tbUser;
 DELETE FROM bdSPHack.tbUser WHERE idUser >=5;
