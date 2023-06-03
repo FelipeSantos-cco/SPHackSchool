@@ -38,12 +38,18 @@
     <div class="form">
         <div class="conteiner">
             <div class="box">
-                <h1>LOGIN</h1>
+                <h1>
+                    LOGIN 
+                    <select id="sl_login">
+                        <option value="user">User</option>
+                        <option value="adm">Admin</option>
+                    </select>
+                </h1>
                 <p>E-mail</p>
                 <input type="text" id="ipt_email_login" placeholder="nome_email@gmail.com">
                 <p>Senha</p>
                 <input type="password" id="ipt_senha_login" placeholder="******">
-                <button onclick="logar()">Entrar</button>
+                <button onclick="sl_esolha_login()">Entrar</button>
             </div>
 
         </div>
@@ -64,14 +70,29 @@
 <script>
     var erro = false;
 
-    function logar() {
-        var email_html = ipt_email_login.value;
-        var senha_html = ipt_senha_login.value;
+    var email_html;
+    var senha_html;
 
-        // console.log(email.includes('@'));
+    var check_email;
+    var check_senha;
 
-        var check_email = email_html == "" || (email_html.includes('@')) == false;
-        var check_senha = senha_html.length <= 5;
+    function sl_esolha_login(){
+        var slEscolhaLogin = sl_login.value;
+
+        if(slEscolhaLogin == "user"){
+            logarUser();
+        }
+        else{
+            logarAdmin();
+        }
+    }
+
+    function validaLogin(){
+        email_html = ipt_email_login.value;
+        senha_html = ipt_senha_login.value;
+    
+        check_email = email_html == "" || (email_html.includes('@')) == false;
+        check_senha = senha_html.length <= 5;
 
         if (check_email) {
             alert(`Por favor, coloque um e-mail válido`);
@@ -88,6 +109,11 @@
 
             erro = true;
         }
+    
+    }
+
+    function logarUser() {
+        validaLogin();
 
         if (!erro) {
             fetch("/user/logar", {
@@ -141,5 +167,55 @@
         erro = false;
     }
 
+    function logarAdmin(){
+        validaLogin()
+
+        if (!erro) {
+            fetch("/admin/logar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email_html: email_html,
+                    senha_html: senha_html
+                })
+            }).then((resposta) => {
+
+                if (resposta.ok) {
+                    // console.log(resposta);
+
+                    resposta.json().then(json => {
+                        // console.log(json);
+                        // console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_ADM = json.loginAdm;
+                        sessionStorage.ID_ADM = json.idAdm;
+
+                        setTimeout(() => { window.location = "./admin/admin.html"; }, 1000);
+
+                    });
+
+                }
+                else {
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        alert(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
+        }
+
+
+        erro = false;
+
+    }
 
 </script>

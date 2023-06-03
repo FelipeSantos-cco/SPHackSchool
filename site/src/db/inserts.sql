@@ -238,3 +238,5 @@ VALUES (11, 1)
 , (59, 1)
 , (60, 1);
 -- Em um cenário sem erros, os idUser vão de 1 até 55
+INSERT INTO bdSPHack.tbAdm (loginAdm, senhAdm)
+VALUES ('fefe@gmail.com', '12345678');

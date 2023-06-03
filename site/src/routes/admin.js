@@ -26,8 +26,9 @@ rota.get("/topFavoritos", (req, res) =>{
     adminController.topFavoritos(req, res);
 });
 
-rota.get("/logar", (req, res)=>{
-    info("Logando")
+rota.post("/logar", (req, res)=>{
+    info("Logando");
+    adminController.logar(req, res);
 })
 
 module.exports = rota;

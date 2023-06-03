@@ -34,10 +34,17 @@ function topFavoritos(){
     return database.queryBD(query);
 }
 
+function logar(email, senha){
+    var query = `SELECT * FROM bdSPHack.tbAdm WHERE loginAdm = '${email}' AND senhAdm = '${senha}';`;
+    info(query)
+
+    return database.queryBD(query);
+}
 
 module.exports ={
     qtdCurso,
     qtdPlataforma,
     qtdUser,
-    topFavoritos
+    topFavoritos,
+    logar
 }
