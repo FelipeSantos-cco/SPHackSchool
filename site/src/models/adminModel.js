@@ -28,7 +28,9 @@ function qtdUser(){
 function topFavoritos(){
     var query = `SELECT cur.*, COUNT(fkCurso) AS qtdFav FROM bdSPHack.tbFavoritos as fav 
 	                INNER JOIN bdSPHack.tbCurso as cur ON fav.fkCurso = cur.idCurso
-		                GROUP BY fkCurso LIMIT 3;`;
+		                GROUP BY fkCurso 
+			            ORDER BY qtdFav DESC 
+                            LIMIT 3;`;
     info(query)
 
     return database.queryBD(query);
