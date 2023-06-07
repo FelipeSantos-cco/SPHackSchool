@@ -30,7 +30,6 @@ def insertPlataformas_BD(nomePlat, urlPlat, urlImg):
 
     sql = "INSERT INTO bdSPHack.tbPlataforma (nomePlataforma, urlPlataforma, urlImgPlataforma) VALUES(%s, %s, %s);"
     val = (nomePlat, urlPlat, urlImg)
-
     mycursor.execute(sql, val)
     meubd.commit()
 
@@ -47,20 +46,23 @@ def buscaLink():
             resposta = requests.get(link)
 
             if resposta.status_code >= 200 and resposta.status_code < 300:
-                site = BeautifulSoup(resposta.content, 'html.parser')
+                try:
+                    site = BeautifulSoup(resposta.content, 'html.parser')
 
-                titulo = site.find('h1', attrs={'class': 'entry-title'}).contents[0]
+                    titulo = site.find('h1', attrs={'class': 'entry-title'}).contents[0]
 
-                urlImg = site.find('img', attrs={'decoding': 'async'}).get('data-src')
-                urlImg = 'https://guiadeti.com.br'+urlImg
+                    urlImg = site.find('img', attrs={'decoding': 'async'}).get('data-src')
+                    urlImg = 'https://guiadeti.com.br'+urlImg
 
-                urlPlataforma = site.find('div', attrs={'class': 'project-info'}).find('a', attrs={'target' : '_blank'}).get('href')
+                    urlPlataforma = site.find('div', attrs={'class': 'project-info'}).find('a', attrs={'target' : '_blank'}).get('href')
 
-                # print(f'{titulo}\n{descricao}\n{urlPlataforma}\n{urlImg}')
-                insertPlataformas_BD(titulo, urlPlataforma, urlImg)
-        
+                    # print(f'{titulo}\n{descricao}\n{urlPlataforma}\n{urlImg}')
+                    insertPlataformas_BD(titulo, urlPlataforma, urlImg)
+                except:
+                    print(f"Não foi possivel Raspar o link {link}")
+                    pass
         except:
-            print(f"Não foi possivel buscar e inserir a plataforma {link}")
+            print(f"Não foi possivel buscar a plataforma {link}")   
             pass
 
 
